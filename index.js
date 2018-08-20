@@ -9,7 +9,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 app.engine('html', require('ejs').__express);
 
-app.use(express.static(path.join(__dirname,'images')));
+app.use(express.static(path.join(__dirname,'public')));
 
 app.get('/',(req,res,next)=>{
     res.render('login',{title:'Mi Tienda NodePop'});

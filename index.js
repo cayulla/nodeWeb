@@ -27,6 +27,6 @@ app.use((err,req,res,next)=>{
     res.render('error');
 })
 
-server.listen(3000,()=>{
+server.listen(3001,()=>{
     console.log('Iniciado mi Tiende NodePop');
 })

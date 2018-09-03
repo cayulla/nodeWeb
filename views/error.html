@@ -1,3 +1,36 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h2>Hemos tenido un problema</h2>  
+      
+        <table>
+            <tr>
+                <td rowspan="3"><img src="/images/system/error_01.jpg" height="300" width="250"/></td>
+                <td><h2>Error: <%= code %></h2></td>  
+            </tr>
+            <tr>
+                <td> <h2><%= error.status %></h2> </td>
+            </tr>
+            <tr>
+                <td><pre><%= error.stack %></pre></td>
+            </tr>
+        </table>
+    </div>
+</main>
+
+<footer>
+    <% include partials/footer %>
+</footer>
+
+</body>
+</html>

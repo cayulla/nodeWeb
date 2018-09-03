@@ -9,6 +9,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 app.engine('html', require('ejs').__express);
 
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname,'public')));
 
 app.get('/',(req,res,next)=>{
@@ -16,12 +17,16 @@ app.get('/',(req,res,next)=>{
 });
 
 app.use('/anuncios',require('./routes/anuncios'));
+app.use('/usuarios',require('./routes/usuarios'));
 
 
 app.use((err,req,res,next)=>{
-    res.status(err.status || 500);
-
-    res.locals.message = '';
+    console.log("Parseando Error -"+err.code);
+    if (err.status && err.status >= 500) console.error(err);
+       
+    res.status(err.status || err.code || 500);
+    
+    res.locals.code = err.code;
     res.locals.error = err;
 
     res.render('error');

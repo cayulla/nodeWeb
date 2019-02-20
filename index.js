@@ -9,7 +9,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 app.engine('html', require('ejs').__express);
 
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 app.use(express.static(path.join(__dirname,'public')));
 
 app.get('/',(req,res,next)=>{
@@ -18,6 +20,7 @@ app.get('/',(req,res,next)=>{
 
 app.use('/anuncios',require('./routes/anuncios'));
 app.use('/usuarios',require('./routes/usuarios'));
+app.use('/custom',require('./routes/custom'));
 
 
 app.use((err,req,res,next)=>{

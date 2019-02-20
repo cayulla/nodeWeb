@@ -18,6 +18,11 @@ app.get('/',(req,res,next)=>{
     res.render('login',{title:'Mi Tienda NodePop'});
 });
 
+
+app.get('/log',(req,res,next)=>{
+    res.sendFile(path.join(__dirname,'/app.log'))
+});
+
 app.use('/anuncios',require('./routes/anuncios'));
 app.use('/usuarios',require('./routes/usuarios'));
 app.use('/custom',require('./routes/custom'));

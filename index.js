@@ -5,6 +5,7 @@ const app = express();
 const server = require('http').Server(app);
 const path = require('path');
 
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 app.engine('html', require('ejs').__express);

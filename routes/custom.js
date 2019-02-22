@@ -2,10 +2,11 @@
 
 var express = require('express');
 var router = express.Router();
-
+//nodepop.cayulla.com
 
 router.post('/', async (req, res, next) =>{
-    console.log('=========================');
+    var fecha = new Date().toLocaleString();
+    console.log('===>> '+fecha);
     console.log('===== REQUEST HEADER =====');
     console.log(req.headers);
     console.log('===== REQUEST BODY =====');
@@ -16,5 +17,7 @@ router.post('/', async (req, res, next) =>{
         success:true
     });
 });
+
+
 
 module.exports = router;

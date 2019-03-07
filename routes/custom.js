@@ -14,7 +14,7 @@ router.post('/', async (req, res, next) =>{
     console.log('=========================');
 
     return res.json({
-        foudSignupDate:"2016-03-10"
+        id:"20160310abc"
     });
 });
 
